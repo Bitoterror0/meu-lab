@@ -21,6 +21,13 @@ Este roteiro organiza a leitura das notas de referência e a resolução dos exe
 - [ ] Resolver o exercício 4 (Tabuada) descrito em [exercicios/logica.md](exercicios/logica.md), verificando entradas positivas, zero e negativas.
 - [ ] Resolver o exercício 5 (Inversão de Texto ASCII) descrito em [exercicios/logica.md](exercicios/logica.md), conferindo texto vazio, caractere único e espaços.
 
-## Etapa 4: Revisão Geral
+## Etapa 4: Beecrowd
+
+- [x] Resolver os problemas 1000 a 1010 da categoria Iniciante em Java e C#.
+- [x] Resolver os problemas 2602 a 2606 da categoria SQL.
+- [ ] Ler o guia de lógica em [beecrowd/README.md](beecrowd/README.md).
+- [ ] Resolver os problemas 1011 a 1020 da categoria Iniciante.
+
+## Etapa 5: Revisão Geral
 
 - [ ] Conferir se todas as anotações pessoais seguem as boas práticas de escrita de [notas/markdown.md](notas/markdown.md) e o fluxo de mudanças de [notas/git-basico.md](notas/git-basico.md).

@@ -1,0 +1,18 @@
+DROP SCHEMA IF EXISTS p2602 CASCADE; CREATE SCHEMA p2602;
+CREATE TABLE p2602.customers (id numeric PRIMARY KEY, name varchar, street varchar, city varchar, state char(2), credit_limit numeric);
+INSERT INTO p2602.customers VALUES (1,'Pedro Augusto da Rocha','Rua Pedro Carlos Hoffman','Porto Alegre','RS',700),(2,'Antonio Carlos Mamel','Av. Pinheiros','Belo Horizonte','MG',3500.50),(3,'Luiza Augusta Mhor','Rua Salto Grande','Niteroi','RJ',4000),(4,'Jane Ester','Av 7 de setembro','Erechim','RS',800),(5,'Marcos Antônio dos Santos','Av Farrapos','Porto Alegre','RS',4250.25);
+DROP SCHEMA IF EXISTS p2604 CASCADE; CREATE SCHEMA p2604;
+CREATE TABLE p2604.products (id numeric PRIMARY KEY, name varchar, amount numeric, price numeric);
+INSERT INTO p2604.products VALUES (1,'Two-door wardrobe',100,80),(2,'Dining table',1000,560),(3,'Towel holder',10000,5.50),(4,'Computer desk',350,100),(5,'Chair',3000,210.64),(6,'Single bed',750,99);
+DROP SCHEMA IF EXISTS p2605 CASCADE; CREATE SCHEMA p2605;
+CREATE TABLE p2605.categories (id numeric PRIMARY KEY, name varchar);
+CREATE TABLE p2605.providers (id numeric PRIMARY KEY, name varchar, street varchar, city varchar, state char(2));
+CREATE TABLE p2605.products (id numeric PRIMARY KEY, name varchar, amount numeric, price numeric, id_providers numeric REFERENCES p2605.providers, id_categories numeric REFERENCES p2605.categories);
+INSERT INTO p2605.categories VALUES (1,'old stock'),(2,'new stock'),(3,'modern'),(4,'commercial'),(5,'recyclable'),(6,'executive'),(7,'superior'),(8,'wood'),(9,'super luxury'),(10,'vintage');
+INSERT INTO p2605.providers VALUES (1,'Henrique','Av Brasil','Rio de Janeiro','RJ'),(2,'Marcelo Augusto','Rua Imigrantes','Belo Horizonte','MG'),(3,'Caroline Silva','Av São Paulo','Salvador','BA'),(4,'Guilerme Staff','Rua Central','Porto Alegre','RS'),(5,'Isabela Moraes','Av Juiz Grande','Curitiba','PR'),(6,'Francisco Accerr','Av Paulista','São Paulo','SP');
+INSERT INTO p2605.products VALUES (1,'Two-door wardrobe',100,800,6,8),(2,'Dining table',1000,560,1,9),(3,'Towel holder',10000,25.50,5,1),(4,'Computer desk',350,320.50,4,6),(5,'Chair',3000,210.64,3,6),(6,'Single bed',750,460,1,2);
+DROP SCHEMA IF EXISTS p2606 CASCADE; CREATE SCHEMA p2606;
+CREATE TABLE p2606.categories (id numeric PRIMARY KEY, name varchar);
+CREATE TABLE p2606.products (id numeric PRIMARY KEY, name varchar, amount numeric, price numeric, id_categories numeric REFERENCES p2606.categories);
+INSERT INTO p2606.categories SELECT * FROM p2605.categories;
+INSERT INTO p2606.products VALUES (1,'Lampshade',100,800,4),(2,'Table for painting',1000,560,9),(3,'Notebook desk',10000,25.50,9),(4,'Computer desk',350,320.50,6),(5,'Chair',3000,210.64,9),(6,'Home alarm',750,460,4);

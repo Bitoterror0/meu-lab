@@ -9,6 +9,7 @@ Aqui organizo anotações, exercícios e pequenos exemplos para praticar desenvo
 - [Anotações](notas/README.md)
 - [Exercícios](exercicios/README.md)
 - [Exemplos](exemplos/README.md)
+- [Beecrowd](beecrowd/README.md)
 - [Plano de estudos](PLANO.md)
 
 ## Como usar
